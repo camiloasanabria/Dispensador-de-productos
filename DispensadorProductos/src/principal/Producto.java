@@ -22,10 +22,14 @@ public class Producto {
     public double porcentajeVentas = 0;
     public double porcentajeGanancias = 0;
     
-    Producto(){
-        
+    Producto(){   
     }
-    
+    /**
+     * constructor Producto
+     * @param nombre
+     * @param precioUnidad
+     * @param cantidadInicial 
+     */
     Producto(String nombre, int precioUnidad, int cantidadInicial){
         this.nombre = nombre;
         this.precioUnidad = precioUnidad;
@@ -93,5 +97,9 @@ public class Producto {
         respuesta+="\nPORCENTAJE DE GANANCIAS: "+this.porcentajeGanancias+"%";
         respuesta+="\n----------------------------------\n";
         return respuesta;
+    }
+    @Override
+    public String toString(){
+        return "DATOS CARGADOS";
     }
 }

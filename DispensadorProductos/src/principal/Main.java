@@ -152,11 +152,18 @@ public class Main {
                         p6.calcularPorcentajeGanancias();
                     }
                     System.out.println(p1.consultarInforme());
+                    System.out.println(p1.toString());
                     System.out.println(p2.consultarInforme());
+                    System.out.println(p2.toString());
                     System.out.println(p3.consultarInforme());
+                    System.out.println(p3.toString());
                     System.out.println(p4.consultarInforme());
+                    System.out.println(p4.toString());
                     System.out.println(p5.consultarInforme());
+                    System.out.println(p5.toString());
                     System.out.println(p6.consultarInforme());
+                    System.out.println(p6.toString());
+                    System.out.println("\n\n");
                     break;
                 case 3:
                     System.out.println("ESCOJA EL PRODUCTO AL QUE DESEA INGRESAR UNIDADES");
