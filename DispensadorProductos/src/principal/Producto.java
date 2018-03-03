@@ -9,6 +9,7 @@ package principal;
  * version 1.0
  * @author cass465
  * 2/3/2018
+ * La clase Producto contiene las caracteristicas de los productos del dispensador y sus funciones
  */
 public class Producto {
     public String nombre = "";
@@ -31,28 +32,54 @@ public class Producto {
         this.cantidadInicial = cantidadInicial;
         this.cantidadFinal = cantidadInicial;
     }
+    /**
+     * Ingresar unidades de un producto al dispensador
+     * @param unidades
+     * @return 
+     */
     public int ingresarUnidades(int unidades){
         this.cantidadFinal+=unidades;
         return this.cantidadFinal;
     }
+    /**
+     * calcular el valor de las ganancias por objeto
+     * @return 
+     */
     public int calcularGanancias(){
         this.cantidadVendidaTotal++;
         this.totalGanancias = this.cantidadVendidaTotal*this.precioUnidad;
         this.cantidadFinal--;
         return this.totalGanancias;
     }
+    /**
+     * calcular el porcentaje de ventas
+     * @return 
+     */
     public double calcularPorcentajeVentas(){
         this.porcentajeVentas = (this.cantidadVendidaTotal*100)/(this.cantidadFinal+this.cantidadVendidaTotal);
         return this.porcentajeVentas;
     }
+    /**
+     * calcular el porcentaje de las ganancias
+     * @return 
+     */
     public double calcularPorcentajeGanancias(){
         this.porcentajeGanancias = (this.totalGanancias*100)/((this.cantidadFinal+this.cantidadVendidaTotal)*this.precioUnidad);
         return this.porcentajeGanancias;
     }
+    /**
+     * asignar a la cantidad final de un producto su cantidad inicial
+     * @param cantidadInicial
+     * @return 
+     */
     public int cantidadInicialProductosNuevos(int cantidadInicial){
         this.cantidadFinal = cantidadInicial;
         return this.cantidadFinal;
     }
+    /**
+     * imprimir los datos de todos los productos
+     * @return 
+     */
     public String consultarInforme(){
         String respuesta;
         respuesta="\n----------------------------------\n";

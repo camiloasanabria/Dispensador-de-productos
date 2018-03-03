@@ -10,6 +10,7 @@ import java.util.Scanner;
  * version 1.0
  * 2/3/2018
  * @author cass465
+ * clase principal Main
  */
 public class Main {
 
