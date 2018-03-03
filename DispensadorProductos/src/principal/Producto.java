@@ -15,41 +15,43 @@ public class Producto {
     public int precioUnidad = 0;
     public int cantidadInicial = 0;
     
-    public int cantidadTotal = 0;
-    public int cantidadVendida = 0;
+    public int cantidadFinal = 0;
     public int cantidadVendidaTotal = 0;
-    public int ganancias = 0;
     public int totalGanancias = 0;
-    public int porcentajeVentas = 0;
-    public int porcentajeGanancias = 0;
+    public double porcentajeVentas = 0;
+    public double porcentajeGanancias = 0;
     
     Producto(){
         
     }
+    
     Producto(String nombre, int precioUnidad, int cantidadInicial){
         this.nombre = nombre;
         this.precioUnidad = precioUnidad;
         this.cantidadInicial = cantidadInicial;
-        this.cantidadTotal = cantidadInicial;
+        this.cantidadFinal = cantidadInicial;
     }
     public int ingresarUnidades(int unidades){
-        this.cantidadTotal+=unidades;
-        return this.cantidadTotal;
+        this.cantidadFinal+=unidades;
+        return this.cantidadFinal;
     }
     public int calcularGanancias(){
         this.cantidadVendidaTotal++;
-        this.ganancias = this.cantidadVendidaTotal*this.precioUnidad;
-        this.totalGanancias+=this.ganancias;
-        this.cantidadTotal--;
+        this.totalGanancias = this.cantidadVendidaTotal*this.precioUnidad;
+        this.cantidadFinal--;
         return this.totalGanancias;
     }
-    public int porcentajeVentas(){
-        this.porcentajeVentas = (this.cantidadVendidaTotal*100)/this.cantidadTotal;
+    public double calcularPorcentajeVentas(){
+        this.porcentajeVentas = (this.cantidadVendidaTotal*100)/(this.cantidadFinal+this.cantidadVendidaTotal);
         return this.porcentajeVentas;
     }
-    public int porcentajeGanancias(){
-        this.porcentajeGanancias = (this.totalGanancias*100)/(this.cantidadTotal*this.precioUnidad);
+    public double calcularPorcentajeGanancias(){
+        this.porcentajeGanancias = (this.totalGanancias*100)/((this.cantidadFinal+this.cantidadVendidaTotal)*this.precioUnidad);
         return this.porcentajeGanancias;
+    }
+    public int cantidadInicialProductosNuevos(int cantidadInicial){
+        this.cantidadFinal = cantidadInicial;
+        return this.cantidadFinal;
     }
     public String consultarInforme(){
         String respuesta;
@@ -57,7 +59,7 @@ public class Producto {
         respuesta+="\nNOMBRE DEL PRODUCTO: "+this.nombre;
         respuesta+="\nPRECIO POR UNIDAD: "+this.precioUnidad;
         respuesta+="\nCANTIDAD INICIAL: "+this.cantidadInicial;
-        respuesta+="\nCANTIDAD TOTAL: "+this.cantidadTotal;
+        respuesta+="\nCANTIDAD FINAL: "+this.cantidadFinal;
         respuesta+="\nCANTIDAD DE VENTAS: "+this.cantidadVendidaTotal;
         respuesta+="\nGANANCIAS: "+this.totalGanancias;
         respuesta+="\nPORCENTAJE DE VENTAS: "+this.porcentajeVentas+"%";
