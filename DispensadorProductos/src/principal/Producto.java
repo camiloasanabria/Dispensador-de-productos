@@ -36,12 +36,11 @@ public class Producto {
         this.cantidadTotal+=unidades;
         return this.cantidadTotal;
     }
-    public int calcularGanancias(int cantidadVendida){
-        this.cantidadVendida = cantidadVendida;
-        this.ganancias = this.cantidadVendida*this.precioUnidad;
-        this.cantidadVendidaTotal+=this.cantidadVendida;
+    public int calcularGanancias(){
+        this.cantidadVendidaTotal++;
+        this.ganancias = this.cantidadVendidaTotal*this.precioUnidad;
         this.totalGanancias+=this.ganancias;
-        this.cantidadTotal-=this.cantidadVendida;
+        this.cantidadTotal--;
         return this.totalGanancias;
     }
     public int porcentajeVentas(){
